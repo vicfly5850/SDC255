@@ -1,0 +1,25 @@
+#include <iostream>   // For console output
+#include <fstream>    // Required for file operations
+
+using namespace std;
+
+// Function must be named "writeFile" with no inputs
+void writeFile() {
+    ofstream outFile("output.txt");
+
+    // Attempt to open file and display error if unsuccessful
+    if (!outFile.is_open()) {
+        cerr << "Error: Could not open file for writing.\n";
+        return;
+    }
+
+    // Successfully output data into the file
+    outFile << "=== Account Summary ===\n";
+    outFile << "Name: Jane Doe\n";
+    outFile << "Balance: $1,250.00\n";
+    outFile << "Status: Active\n";
+
+    // Close the file after writing
+    outFile.close();
+    cout << "Data successfully written to 'output.txt'.\n";
+}
