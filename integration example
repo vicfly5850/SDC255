@@ -1,0 +1,9 @@
+int main() {
+    int selected = menu();       // From Story 1
+    if (selected >= 1 && selected <= 4) {
+        mainLoop(selected);      // From Story 2
+    } else {
+        writeFile();             // From Story 3
+    }
+    return 0;
+}
