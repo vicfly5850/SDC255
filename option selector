@@ -1,0 +1,37 @@
+#include <iostream>     // Pertinent header file 1
+#include <string>       // Pertinent header file 2
+#include <limits>       // Pertinent header file 3
+#include <cstdlib>      // Pertinent header file 4
+
+using namespace std;
+
+// Function must be named "mainLoop" and take an integer input
+void mainLoop(int option) {
+    // Accommodate 4 options
+    switch (option) {
+        case 1:
+            cout << "\n[Option 1] Viewing account details...\n";
+            cout << "Account Name: Jane Doe\nBalance: $1,250.00\n";
+            break;
+        case 2:
+            cout << "\n[Option 2] Depositing funds...\n";
+            double deposit;
+            cout << "Enter amount to deposit: $";
+            cin >> deposit;
+            cout << "Deposited $" << deposit << " successfully.\n";
+            break;
+        case 3:
+            cout << "\n[Option 3] Withdrawing funds...\n";
+            double withdrawal;
+            cout << "Enter amount to withdraw: $";
+            cin >> withdrawal;
+            cout << "Withdrew $" << withdrawal << " successfully.\n";
+            break;
+        case 4:
+            cout << "\n[Option 4] Exiting application...\n";
+            exit(0);
+            break;
+        default:
+            cout << "Invalid option. Please try again.\n";
+    }
+}
