@@ -1,0 +1,41 @@
+#include <iostream>
+#include <limits>
+#include <cstdlib> // Required for system("clear") or system("CLS")
+
+using namespace std;
+
+// Function must be named "menu" and return an integer
+int menu() {
+    // Clear the screen before displaying options
+    #ifdef _WIN32
+        system("CLS");
+    #else
+        system("clear");
+    #endif
+
+    // Display five options
+    cout << "========== MAIN MENU ==========\n";
+    cout << "1. View Account\n";
+    cout << "2. Deposit Funds\n";
+    cout << "3. Withdraw Funds\n";
+    cout << "4. Transfer Funds\n";
+    cout << "5. Exit\n";
+    cout << "================================\n";
+
+    int choice;
+    // Return selected option as an integer
+    while (true) {
+        cout << "Enter your choice (1–5): ";
+        cin >> choice;
+
+        if (cin.fail() || choice < 1 || choice > 5) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a number between 1 and 5.\n";
+        } else {
+            break;
+        }
+    }
+
+    return choice;
+}
